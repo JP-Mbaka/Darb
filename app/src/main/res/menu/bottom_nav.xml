@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="Item"
+        android:visible="true" />
+    <item
+        android:id="@+id/search"
+        android:title="Item"
+        android:visible="true" />
+    <item
+        android:id="@+id/bold"
+        android:title="Item"
+        android:visible="true" />
+    <item
+        android:id="@+id/hmmm"
+        android:title="Item"
+        android:visible="true" />
+    <item
+        android:id="@+id/jui"
+        android:title="Item"
+        android:visible="true" />
+</menu>

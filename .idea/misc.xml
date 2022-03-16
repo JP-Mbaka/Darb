@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/dash_round_border.xml" value="0.181" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13903985507246377" />
+        <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.19375" />
       </map>
     </option>
   </component>
