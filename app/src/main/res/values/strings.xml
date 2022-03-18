@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Darb</string>
     <string name="slide_images_of_darb">Slide images of darb</string>
+    <string name="emergency_img_desc">to alert the hospital to sending down an ambulance</string>
+    <string name="help_img_desc">to get understanding or read online materials about diabetes</string>
+    <string name="settings_img_desc">to review the application setting like theme color</string>
+    <string name="contact_doc_img_desc">to contact your doctor for on the day of appointment</string>
+    <string name="hospital_img_desc">to take a view of hospitals contacts to communiacte to like receptionist</string>
+    <string name="diet_img_desc">to review diet chart</string>
+    <string name="rem_img_desc">to set reminder</string>
+    <string name="appointment_img_desc">To schedule appointment with the doctor</string>
+    <string name="classifyer_img_desc">classifies diabetes type btn</string>
 </resources>
