@@ -28,7 +28,7 @@
 <!--                    app:layout_constraintTop_toTopOf="parent"-->
 <!--                    tools:srcCompat="@tools:sample/backgrounds/scenic" />-->
                 <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPagerImageSlider"
+                    android:id="@+id/viewPager_ImageSlider"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="80dp"
