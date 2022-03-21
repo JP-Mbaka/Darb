@@ -13,9 +13,11 @@ class SliderAdapter internal constructor(
 ) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>(){
 
     private val sliderItems: List<SliderItem>
+    private var viewPager2: ViewPager2
 
     init {
         this.sliderItems = sliderItems
+        this.viewPager2  = viewPager
     }
 
     class SliderViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -32,9 +34,17 @@ class SliderAdapter internal constructor(
 
     override fun onBindViewHolder(holder: SliderViewHolder, position: Int) {
         holder.image(sliderItems[position])
+        if (position == sliderItems.size - 2){
+            viewPager2.post(runnable)
+        }
     }
 
     override fun getItemCount(): Int {
         return sliderItems.size
+    }
+
+    private val runnable = Runnable {
+        sliderItems.addAll(sliderItems)
+        notifyDataSetChanged()
     }
 }
