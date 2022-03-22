@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dashboard"
-        android:title="Item"
-        android:visible="true" />
+        android:id="@+id/classify"
+        android:icon="@drawable/ic_baseline_merge_type_24"
+        android:title="@string/classify"
+        android:enabled="true"/>
     <item
-        android:id="@+id/search"
-        android:title="Item"
-        android:visible="true" />
+        android:id="@+id/hospital"
+        android:icon="@drawable/ic_baseline_local_hospital_24"
+        android:title="@string/hospital"
+        android:enabled="true" />
     <item
-        android:id="@+id/bold"
-        android:title="Item"
-        android:visible="true" />
+        android:id="@+id/emergency"
+        android:icon="@drawable/ic_baseline_warning_24"
+        android:title="@string/emergency"
+        android:enabled="true"/>
     <item
-        android:id="@+id/hmmm"
-        android:title="Item"
-        android:visible="true" />
-    <item
-        android:id="@+id/jui"
-        android:title="Item"
-        android:visible="true" />
+        android:id="@+id/help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:title="@string/help"
+        android:enabled="true"/>
 </menu>

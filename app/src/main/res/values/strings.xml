@@ -10,4 +10,12 @@
     <string name="rem_img_desc">to set reminder</string>
     <string name="appointment_img_desc">To schedule appointment with the doctor</string>
     <string name="classifyer_img_desc">classifies diabetes type btn</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="classify">Classify</string>
+    <string name="hospital">Hospital</string>
+    <string name="help">Help</string>
+    <string name="emergency">Emergency</string>
 </resources>

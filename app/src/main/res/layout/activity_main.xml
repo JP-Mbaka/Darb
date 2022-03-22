@@ -6,15 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="roboto"
+        android:letterSpacing="0.5"
+        android:textSize="28sp"
+        android:text="@string/app_name"
+        android:textColor="@color/blue_700"
+        android:textFontWeight="800"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toTopOf="@id/image_slide_pane"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/image_slide_pane"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".25"
                 app:layout_constraintBottom_toTopOf="@id/Navigation_menu"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="@id/intro">
 
                 <!-- I want the image to round-radius-->
 <!--                <ImageView-->
@@ -45,11 +63,13 @@
         android:id="@+id/Navigation_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:background="@drawable/dash_round_border"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".40"
+        android:layout_marginBottom="0dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_slide_pane">
@@ -58,51 +78,82 @@
             android:id="@+id/upper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="5dp"
             app:layout_constraintBottom_toTopOf="@id/middle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="none">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
                 android:id="@+id/classify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:contentDescription="@string/classifyer_img_desc"
+                app:layout_constraintBottom_toTopOf="@id/textView_classify"
                 app:layout_constraintEnd_toStartOf="@+id/appointment"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_account_tree_24"
-                android:contentDescription="@string/classifyer_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_account_tree_24" />
+
+            <TextView
+                android:id="@+id/textView_classify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Classify"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/classify"
+                app:layout_constraintHorizontal_bias="0.388"
+                app:layout_constraintStart_toStartOf="@id/classify"
+                app:layout_constraintTop_toBottomOf="@id/classify" />
 
             <ImageButton
                 android:id="@+id/appointment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:contentDescription="@string/appointment_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_apppointment"
                 app:layout_constraintEnd_toStartOf="@+id/reminder"
                 app:layout_constraintStart_toEndOf="@+id/classify"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_list_alt_24"
-                android:contentDescription="@string/appointment_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_list_alt_24" />
+
+            <TextView
+                android:id="@+id/textView_apppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Appointment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/appointment"
+                app:layout_constraintStart_toStartOf="@id/appointment"
+                app:layout_constraintTop_toBottomOf="@id/appointment" />
 
             <ImageButton
                 android:id="@+id/reminder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:contentDescription="@string/rem_img_desc"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/textView_reminder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/appointment"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_timer_24"
-                android:contentDescription="@string/rem_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_timer_24" />
+
+            <TextView
+                android:id="@+id/textView_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Reminder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/reminder"
+                app:layout_constraintStart_toStartOf="@id/reminder"
+                app:layout_constraintTop_toBottomOf="@id/reminder" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -111,7 +162,7 @@
             android:id="@+id/middle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="5dp"
             app:layout_constraintBottom_toTopOf="@id/lower"
             app:layout_constraintEnd_toEndOf="@id/upper"
             app:layout_constraintStart_toStartOf="@id/upper"
@@ -119,49 +170,86 @@
 
             <ImageButton
                 android:id="@+id/diet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/diet_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_diet"
                 app:layout_constraintEnd_toStartOf="@+id/hospital"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_fastfood_24"
-                android:contentDescription="@string/diet_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_fastfood_24" />
+
+            <TextView
+                android:id="@+id/textView_diet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Diet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/diet"
+                app:layout_constraintStart_toStartOf="@id/diet"
+                app:layout_constraintTop_toBottomOf="@id/diet" />
 
             <ImageButton
                 android:id="@+id/hospital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/hospital_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_hospital"
                 app:layout_constraintEnd_toStartOf="@+id/contact_doctor"
                 app:layout_constraintStart_toEndOf="@+id/diet"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_local_hospital_24"
-                android:contentDescription="@string/hospital_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_local_hospital_24" />
+
+            <TextView
+                android:id="@+id/textView_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Hospital"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/hospital"
+                app:layout_constraintStart_toStartOf="@id/hospital"
+                app:layout_constraintTop_toBottomOf="@id/hospital" />
 
             <ImageButton
                 android:id="@+id/contact_doctor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/contact_doc_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_contact_doctor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/hospital"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_contact_phone_24"
-                android:contentDescription="@string/contact_doc_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_contact_phone_24" />
+
+            <TextView
+                android:id="@+id/textView_contact_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Doctor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/contact_doctor"
+                app:layout_constraintStart_toStartOf="@id/contact_doctor"
+                app:layout_constraintTop_toBottomOf="@id/contact_doctor" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lower"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/middle"
             app:layout_constraintStart_toStartOf="@id/middle"
@@ -169,42 +257,82 @@
 
             <ImageButton
                 android:id="@+id/settings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/settings_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_settings"
                 app:layout_constraintEnd_toStartOf="@+id/help"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_settings_24"
-                android:contentDescription="@string/settings_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+            <TextView
+                android:id="@+id/textView_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/settings"
+                app:layout_constraintStart_toStartOf="@id/settings"
+                app:layout_constraintTop_toBottomOf="@id/settings" />
+
 
             <ImageButton
                 android:id="@+id/help"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/help_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_help"
                 app:layout_constraintEnd_toStartOf="@+id/emergency"
                 app:layout_constraintStart_toEndOf="@+id/settings"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_help_24"
-                android:contentDescription="@string/help_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_help_24" />
+
+            <TextView
+                android:id="@+id/textView_help"
+                style="@style/textViewDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Help"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/help"
+                app:layout_constraintStart_toStartOf="@id/help"
+                app:layout_constraintTop_toBottomOf="@id/help" />
+
 
             <ImageButton
                 android:id="@+id/emergency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="24dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:contentDescription="@string/emergency_img_desc"
+                app:layout_constraintBottom_toBottomOf="@id/textView_emergency"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/help"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_warning_24"
-                android:contentDescription="@string/emergency_img_desc"/>
+                app:srcCompat="@drawable/ic_baseline_warning_24" />
+
+            <TextView
+                android:id="@+id/textView_emergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:text="Emergency"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/emergency"
+                app:layout_constraintStart_toStartOf="@id/emergency"
+                app:layout_constraintTop_toBottomOf="@id/emergency" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
