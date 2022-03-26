@@ -5,8 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Classify">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flow_horizontalBias="0.0"
+        app:layout_constraintBottom_toTopOf="@id/form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form"
         android:layout_width="419dp"
         android:layout_height="624dp"
         android:padding="30dp"
@@ -17,12 +33,12 @@
         app:layout_constraintHeight_percent=".80"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/age"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Age(yrs)"
@@ -30,16 +46,27 @@
             app:layout_constraintBottom_toTopOf="@id/insulin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="253dp"
-                android:layout_height="40dp" />
+                android:id="@+id/ageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/insulin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Insulin (mu U/ml)"
@@ -48,16 +75,27 @@
             app:layout_constraintBottom_toTopOf="@id/bp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/age">
+            app:layout_constraintTop_toBottomOf="@id/age"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="237dp"
+                android:id="@+id/insulinInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/bp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="BP (mm/Hg)"
@@ -66,16 +104,27 @@
             app:layout_constraintBottom_toTopOf="@id/skin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/insulin">
+            app:layout_constraintTop_toBottomOf="@id/insulin"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="234dp"
+                android:id="@+id/bpInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/skin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Skin Thickness "
@@ -84,35 +133,56 @@
             app:layout_constraintBottom_toTopOf="@id/weight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bp">
+            app:layout_constraintTop_toBottomOf="@id/bp"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="230dp"
+                android:id="@+id/skinInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/weight"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Weight (Kg)"
             android:inputType="numberDecimal"
             android:text="Weight"
-
             app:layout_constraintBottom_toTopOf="@id/pedi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/skin">
+            app:layout_constraintTop_toBottomOf="@id/skin"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="222dp"
+                android:id="@+id/weightInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/pedi"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Pedigree Function "
@@ -121,16 +191,27 @@
             app:layout_constraintBottom_toTopOf="@id/preg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/weight">
+            app:layout_constraintTop_toBottomOf="@id/weight"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="226dp"
+                android:id="@+id/pediInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/preg"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Pregnancy"
@@ -139,10 +220,21 @@
             app:layout_constraintBottom_toTopOf="@id/classify"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pedi">
+            app:layout_constraintTop_toBottomOf="@id/pedi"
+            app:layout_constraintLeft_toLeftOf="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/blue_700"
+            app:helperTextEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/tomatoe_700"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="241dp"
+                android:id="@+id/pregInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -155,6 +247,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/preg"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

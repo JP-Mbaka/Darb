@@ -18,4 +18,5 @@
     <string name="hospital">Hospital</string>
     <string name="help">Help</string>
     <string name="emergency">Emergency</string>
+    <string name="required">required</string>
 </resources>
