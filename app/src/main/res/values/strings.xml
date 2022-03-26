@@ -19,4 +19,12 @@
     <string name="help">Help</string>
     <string name="emergency">Emergency</string>
     <string name="required">required</string>
+    <string name="age">Age(yrs)</string>
+    <string name="insulin">Insulin (mu U/ml)</string>
+    <string name="bp">BP (mm/Hg)</string>
+    <string name="skin_thickness">Skin Thickness</string>
+    <string name="weight">Weight (Kg)</string>
+    <string name="pregnancy">Pregnancy</string>
+    <string name="pedigree">Pedigree Function</string>
+    <string name="classify">Classify</string>
 </resources>
