@@ -8,9 +8,11 @@
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/round_corner.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/round_radius.xml" value="0.181" />
+        <entry key="app/src/main/res/layout/activity_beta_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_classify.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_emergency.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_predict.xml" value="0.1" />
         <entry key="app/src/main/res/layout/darb_view_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/slide_item_container.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.19375" />

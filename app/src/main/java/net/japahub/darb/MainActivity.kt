@@ -10,19 +10,21 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 
-private lateinit var viewPager2: ViewPager2
-private val sliderHandler = Handler()
-private lateinit var classify: ImageButton
-private lateinit var appointment: ImageButton
-private lateinit var reminder: ImageButton
-private lateinit var diet: ImageButton
-private lateinit var hospital: ImageButton
-private lateinit var contactDoctor: ImageButton
-private lateinit var settings: ImageButton
-private lateinit var help: ImageButton
-private lateinit var emergency: ImageButton
+
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var viewPager2: ViewPager2
+    private val sliderHandler by lazy { Handler() }
+    private lateinit var classify: ImageButton
+    private lateinit var appointment: ImageButton
+    private lateinit var reminder: ImageButton
+    private lateinit var diet: ImageButton
+    private lateinit var hospital: ImageButton
+    private lateinit var contactDoctor: ImageButton
+    private lateinit var settings: ImageButton
+    private lateinit var help: ImageButton
+    private lateinit var emergency: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,11 +40,11 @@ class MainActivity : AppCompatActivity() {
         emergency = findViewById(R.id.emergency)
 
         classify.setOnClickListener{
-            val intent = Intent(this, Classify::class.java)
+            val intent = Intent(this, BetaView::class.java)
             startActivity(intent)
         }
         appointment.setOnClickListener{
-            val intent = Intent(this, Hospital::class.java)
+            val intent = Intent(this, Predict::class.java)
             startActivity(intent)
         }
         reminder.setOnClickListener{
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         hospital.setOnClickListener{
-            val intent = Intent(this, Hospital::class.java)
+            val intent = Intent(this, BetaView::class.java)
             startActivity(intent)
         }
         contactDoctor.setOnClickListener{
@@ -66,11 +68,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         help.setOnClickListener{
-            val intent = Intent(this, Help::class.java)
+            val intent = Intent(this, BetaView::class.java)
             startActivity(intent)
         }
         emergency.setOnClickListener{
-            val intent = Intent(this, Emergency::class.java)
+            val intent = Intent(this, BetaView::class.java)
             startActivity(intent)
         }
 

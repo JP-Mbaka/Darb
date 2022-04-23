@@ -14,7 +14,15 @@
         <!-- Customize your theme here. -->
         <item name="imageButtonStyle">@style/imageBtn</item>
     </style>
-
+<!-- TOOOL BAR TITLE TEXT FORMAT -->
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">45sp</item>
+        <item name="fontWeight">1700</item>
+    </style>
+    <style name="Toolbar.TitleText1" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">32sp</item>
+        <item name="fontWeight">1700</item>
+    </style>
     <!-- Dashboard application theme. -->
     <style name="Theme.Darb.dash" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->

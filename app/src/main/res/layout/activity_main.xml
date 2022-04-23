@@ -10,67 +10,67 @@
         android:id="@+id/intro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="roboto"
         android:letterSpacing="0.5"
-        android:textSize="28sp"
         android:text="@string/app_name"
         android:textColor="@color/blue_700"
         android:textFontWeight="800"
-        android:layout_marginStart="5dp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@id/image_slide_pane"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/image_slide_pane"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".25"
-                app:layout_constraintBottom_toTopOf="@id/Navigation_menu"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/intro">
-
-                <!-- I want the image to round-radius-->
-<!--                <ImageView-->
-<!--                    android:id="@+id/imageView"-->
-<!--                    android:layout_width="300dp"-->
-<!--                    android:layout_height="300dp"-->
-<!--                    android:contentDescription="@string/slide_images_of_darb"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:srcCompat="@tools:sample/backgrounds/scenic" />-->
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPager_ImageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingStart="80dp"
-                    android:paddingEnd="80dp">
-
-                </androidx.viewpager2.widget.ViewPager2>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/image_slide_pane"
+        android:layout_width="423dp"
+        android:layout_height="266dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/Navigation_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/intro">
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager_ImageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <!-- I want the navBar to stick to the bottom of the page-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Navigation_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:layout_width="400dp"
+        android:layout_height="342dp"
         android:background="@drawable/dash_round_border"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent=".40"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_slide_pane">
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:padding="5dp"
-                android:text="Classify"
+                android:text="Appointment"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/classify"
                 app:layout_constraintHorizontal_bias="0.388"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:padding="5dp"
-                android:text="Appointment"
+                android:text="@string/predict"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/appointment"
                 app:layout_constraintStart_toStartOf="@id/appointment"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:padding="5dp"
-                android:text="Reminder"
+                android:text="Classify"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/reminder"
                 app:layout_constraintStart_toStartOf="@id/reminder"

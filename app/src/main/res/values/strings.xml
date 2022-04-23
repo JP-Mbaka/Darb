@@ -26,5 +26,6 @@
     <string name="weight">Weight (Kg)</string>
     <string name="pregnancy">Pregnancy</string>
     <string name="pedigree">Pedigree Function</string>
-    <string name="classify">Classify</string>
+    <string name="plas">Plas</string>
+    <string name="predict">Predict</string>
 </resources>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Predict">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".10"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="0dp"
+        app:flow_horizontalBias="0.0"
+        app:layout_constraintBottom_toTopOf="@id/scrollCont"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleCentered="true"
+        app:titleTextColor="@color/blue_700"
+        app:titleTextAppearance="@style/Toolbar.TitleText1"  />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrollCont"
+        android:layout_width="400dp"
+        android:layout_height="550dp"
+        app:layout_constraintBottom_toTopOf="@id/btm_Nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".80"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:fillViewport="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="4dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/age"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/insulin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:startIconDrawable="@drawable/ic_baseline_age"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ageInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/insulin"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/insulin"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/bp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/age"
+                    app:startIconDrawable="@drawable/ic_baseline_insulin"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/insulinInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bp"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/bp"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/skin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/insulin"
+                    app:startIconDrawable="@drawable/ic_baseline_bp"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bpInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/skin"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/skin_thickness"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/plas"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bp"
+                    app:startIconDrawable="@drawable/ic_baseline_skin"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/skinInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/plas"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/plas"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/weight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/skin"
+                    app:startIconDrawable="@drawable/ic_baseline_bp"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/plasInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/weight"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/pedi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plas"
+                    app:startIconDrawable="@drawable/ic_baseline_weight"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/weightInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pedi"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/pedigree"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/preg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weight"
+                    app:startIconDrawable="@drawable/ic_baseline_pedi"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pediInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/preg"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:hint="@string/pregnancy"
+                    android:padding="10dp"
+                    app:boxBackgroundColor="@color/cardview_light_background"
+                    app:helperText="@string/required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/tomatoes_700"
+                    app:hintEnabled="true"
+                    app:hintTextColor="@color/blue_700"
+                    app:layout_constraintBottom_toTopOf="@id/predict"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_default="percent"
+                    app:layout_constraintHeight_percent=".125"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pedi"
+                    app:startIconDrawable="@drawable/ic_baseline_preg"
+                    app:startIconTint="@color/blue_700">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pregInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/predict"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10dp"
+                    android:text="@string/predict"
+                    app:endIconDrawable="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:endIconTint="@color/design_default_color_background"
+                    app:icon="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:iconTint="@color/design_default_color_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/preg" />
+
+
+                <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btm_Nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".10"
+        app:layout_constraintTop_toBottomOf="@id/scrollCont"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:itemTextColor="@color/white"
+        android:layout_margin="30dp"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="labeled"
+        android:background="@drawable/round_corner"
+        app:itemIconTint="@drawable/item_selector"
+        app:menu="@menu/bottom_nav"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
